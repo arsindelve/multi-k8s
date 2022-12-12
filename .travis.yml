@@ -13,4 +13,4 @@ after_success:
   - docker build -t arsindelve/multi-server ./server
   - docker build -t arsindelve/multi-worker ./worker
   - docker build -t arsindelve/multi-nginx ./nginx
-  - docker login
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
